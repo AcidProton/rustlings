@@ -16,6 +16,7 @@ impl Queue {
 
 fn send_tx(q: Queue, tx: mpsc::Sender<u32>) {
     // Clone the sender `tx` first.
+
     let tx_clone = tx.clone();
     thread::spawn(move || {
         for val in q.first_half {
